@@ -1,0 +1,78 @@
+/* 
+COLORS USED:
+    #791607
+    #F16E11
+    #FFC79F
+    #FFFDF3
+*/
+
+.App {
+  font-family: sans-serif;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #fffdf3;
+}
+
+.navbar {
+  color:#fffdf3;
+  background-color: #F16E11;
+  justify-content: center;
+  padding-top: 1%;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
+}
+
+.card {
+  background-color: #FFC79F;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
+}
+
+.title {
+  justify-self: center;
+  color: #791607;
+}
+
+.input-group {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
+}
+
+.dropdown.toggle {
+  background-color: #791607;
+  color:#fffdf3;
+}
+
+.btn {
+  background-color: #791607;
+  color: #fffdf3;
+  border: #791607;
+}
+
+.btn:hover {
+  background-color: #F16E11;
+  color: #fffdf3;
+  border: #791607;
+}
+
+#filter {
+  background-color: #791607;
+  color: #fffdf3;
+  border: #791607;
+}
+
+/* responsive layout */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
