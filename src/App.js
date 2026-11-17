@@ -48,7 +48,7 @@ function App() {
   return (
     <div className="App">
       <Navbar expand="lg" className="justify-content-between">
-        <Container><h3>Online Bookstore</h3></Container>
+        <Container><h3><strong>Online Bookstore</strong></h3></Container>
       </Navbar>
       <Container>
         <Row>
@@ -70,23 +70,12 @@ function App() {
         </Row>
         {error && <p role="alert">{error}. Make sure the backend is running.</p>}
         {!error && books.length === 0 && <p>No books found.</p>}
-        <Row className="mt-3">
-          {books.map(book => (
-            <Col lg="3" md="6" key={book.id}>
-              <Card className="mb-4"><Card.Body>
-                <h4 className="mb-4 title">{book.title}</h4>
-                <p>Author: {book.author}<br />Genre: {book.genre}</p>
-                <p>${Number(book.price).toFixed(2)} | Rating: {book.average_rating ?? 'Not rated'}</p>
-                <Button onClick={() => showBook(book.id)}>Find out more!</Button>
-              </Card.Body></Card>
-            </Col>
-          ))}
-        </Row>
         {selectedBook && (
-          <Card className="mb-4"><Card.Body>
+          <Card className="my-3"><Card.Body>
             <Button className="float-end" onClick={() => setSelectedBook(null)}>Close</Button>
             <h4>{selectedBook.title}</h4>
             <p>{selectedBook.description}</p>
+            <hr></hr>
             <h5>Reviews</h5>
             {selectedBook.reviews.length === 0 ? <p>No reviews yet.</p> :
               selectedBook.reviews.map(review => (
@@ -94,6 +83,18 @@ function App() {
               ))}
           </Card.Body></Card>
         )}
+        <Row className="mt-3">
+          {books.map(book => (
+            <Col lg="3" md="6" key={book.id}>
+              <Card className="mb-4"><Card.Body>
+                <h4 className="mb-4 title">{book.title}</h4>
+                <p>Author: {book.author}<br />Genre: {book.genre}</p>
+                <p>${Number(book.price).toFixed(2)} | Rating: {book.average_rating ?? 'Not rated'}</p>
+                <Button className="float-end" onClick={() => showBook(book.id)}>Find out more!</Button>
+              </Card.Body></Card>
+            </Col>
+          ))}
+        </Row>
       </Container>
     </div>
   );
